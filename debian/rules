@@ -72,8 +72,11 @@ unpack:
 # Apply our patches
 	QUILT_SERIES=debian/patches/series QUILT_PATCHES=debian/patches quilt push -a
 # On big-endian architectures, disable the windres tests (#754829)
+# and the codeview tests
 	if [ "$(DEB_HOST_ARCH_ENDIAN)" = "big" ]; then \
 		rm -f $(upstream_dir)/binutils/testsuite/binutils-all/windres/windres.exp; \
+		rm -f $(upstream_dir)/gas/testsuite/gas/i386/codeview.exp; \
+		rm -f $(upstream_dir)/ld/testsuite/ld-pe/pdb.exp; \
 	fi
 # Spelling fixes
 	@$(call spelling,allows to,allows one to)

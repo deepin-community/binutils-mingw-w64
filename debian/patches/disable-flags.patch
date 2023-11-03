@@ -9,21 +9,19 @@ of the Debian packages.
 
 --- a/upstream/ld/emultempl/pe.em
 +++ b/upstream/ld/emultempl/pe.em
-@@ -262,9 +262,11 @@
- 					(OPTION_ENABLE_LONG_SECTION_NAMES + 1)
+@@ -286,8 +286,11 @@
+   OPTION_DISABLE_LONG_SECTION_NAMES,
  /* DLLCharacteristics flags.  */
- #define OPTION_DYNAMIC_BASE		(OPTION_DISABLE_LONG_SECTION_NAMES + 1)
--#define OPTION_FORCE_INTEGRITY		(OPTION_DYNAMIC_BASE + 1)
-+#define OPTION_NO_DYNAMIC_BASE		(OPTION_DYNAMIC_BASE + 1)
-+#define OPTION_FORCE_INTEGRITY		(OPTION_NO_DYNAMIC_BASE + 1)
- #define OPTION_NX_COMPAT		(OPTION_FORCE_INTEGRITY + 1)
--#define OPTION_NO_ISOLATION		(OPTION_NX_COMPAT + 1)
-+#define OPTION_NO_NX_COMPAT		(OPTION_NX_COMPAT + 1)
-+#define OPTION_NO_ISOLATION		(OPTION_NO_NX_COMPAT + 1)
- #define OPTION_NO_SEH			(OPTION_NO_ISOLATION + 1)
- #define OPTION_NO_BIND			(OPTION_NO_SEH + 1)
- #define OPTION_WDM_DRIVER		(OPTION_NO_BIND + 1)
-@@ -357,10 +359,12 @@
+   OPTION_DYNAMIC_BASE,
++  OPTION_NO_DYNAMIC_BASE,
+   OPTION_FORCE_INTEGRITY,
+   OPTION_NX_COMPAT,
++  OPTION_NO_NX_COMPAT,
++  OPTION_ISOLATION,
+   OPTION_NO_ISOLATION,
+   OPTION_NO_SEH,
+   OPTION_NO_BIND,
+@@ -384,10 +387,12 @@
      {"disable-long-section-names", no_argument, NULL, OPTION_DISABLE_LONG_SECTION_NAMES},
      {"dynamicbase",no_argument, NULL, OPTION_DYNAMIC_BASE},
      {"disable-dynamicbase",no_argument, NULL, OPTION_DISABLE_DYNAMIC_BASE},
@@ -38,7 +36,7 @@ of the Debian packages.
      {"no-seh", no_argument, NULL, OPTION_NO_SEH},
 --- a/upstream/ld/emultempl/pep.em
 +++ b/upstream/ld/emultempl/pep.em
-@@ -343,9 +343,12 @@
+@@ -399,9 +399,12 @@
      {"enable-reloc-section", no_argument, NULL, OPTION_ENABLE_RELOC_SECTION},
      {"disable-reloc-section", no_argument, NULL, OPTION_DISABLE_RELOC_SECTION},
      {"disable-high-entropy-va", no_argument, NULL, OPTION_DISABLE_HIGH_ENTROPY_VA},
