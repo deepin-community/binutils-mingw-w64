@@ -7,7 +7,7 @@ detection to skip running target binaries.
 
 --- a/upstream/binutils/testsuite/binutils-all/objcopy.exp
 +++ b/upstream/binutils/testsuite/binutils-all/objcopy.exp
-@@ -656,6 +656,8 @@
+@@ -702,6 +702,8 @@
  	return 2
      }
  

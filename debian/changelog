@@ -1,8 +1,49 @@
-binutils-mingw-w64 (9) UNRELEASED; urgency=medium
+binutils-mingw-w64 (11+nmu1) unstable; urgency=medium
 
-  * update
+  * Non-maintainer upload.
+  * Drop specify-timestamp.patch, applied upstream in binutils 2.41
+    (Closes: #1042734)
 
- -- Stephen Kitt <skitt@debian.org>  Wed, 15 Jun 2022 17:19:45 +0800
+ -- Nicolas Dandrimont <olasd@debian.org>  Tue, 08 Aug 2023 18:18:48 +0200
+
+binutils-mingw-w64 (11) unstable; urgency=medium
+
+  * In preparation for binutils 2.41, drop pr30079.patch, merged
+    upstream. Closes: #1042284.
+
+ -- Stephen Kitt <skitt@debian.org>  Thu, 27 Jul 2023 07:18:48 +0200
+
+binutils-mingw-w64 (10.4) unstable; urgency=medium
+
+  * Apply upstream patch to fix an internal error. Closes: #1029841.
+
+ -- Stephen Kitt <skitt@debian.org>  Wed, 03 May 2023 08:49:22 +0200
+
+binutils-mingw-w64 (10.3) unstable; urgency=medium
+
+  * Drop another failing codeview test.
+
+ -- Stephen Kitt <skitt@debian.org>  Wed, 11 Jan 2023 13:02:20 +0100
+
+binutils-mingw-w64 (10.2) unstable; urgency=medium
+
+  * Fix the path to the codeview tests.
+
+ -- Stephen Kitt <skitt@debian.org>  Tue, 10 Jan 2023 17:46:40 +0100
+
+binutils-mingw-w64 (10.1) unstable; urgency=medium
+
+  * Disable the codeview tests on big-endian architectures.
+
+ -- Stephen Kitt <skitt@debian.org>  Tue, 10 Jan 2023 08:35:08 +0100
+
+binutils-mingw-w64 (10) unstable; urgency=medium
+
+  * Adjust for binutils 2.40. Closes: #1027666.
+  * Standards-Version 4.6.2, no change required.
+  * Update Lintian overrides.
+
+ -- Stephen Kitt <skitt@debian.org>  Sun, 01 Jan 2023 20:35:22 +0100
 
 binutils-mingw-w64 (9) unstable; urgency=medium
 

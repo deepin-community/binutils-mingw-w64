@@ -1,6 +1,4 @@
 testsuite-timeout.patch
-specify-timestamp.patch
 dont-run-objcopy.patch
 disable-flags.patch
 reproducible-import-libraries.patch
-0001-uniontech-fix-error-about-undeclared.patch
